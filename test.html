@@ -43,23 +43,26 @@ a.darken:hover img {
 	</a>
 </div>
 
-<script type="text/javascript">
+<script>
 	var img;
 	var name;
 	window.onload = function()
 	{
-		var url = unescape(location.href);
-		var pm  = url.split('?');
-		var params   = pm[1].split('&');
-		var param = params[i].split('=');
-		
-		name = param[1];
-		alert(name);
-		param = params[i].split('=');	
-		img  = param[1];
-		alert(img);
-	}
+	var url = unescape(location.href);
+	var pm  = url.split('?');
 	
+	var params   = pm[1].split('&');
+	for( var i=0; i<params.length; i++ )
+	{
+		var param = params[i].split('=');
+		alert(param[0]+' 의 값은 '+param[1]+' 입니다.');
+		
+		if(param[0] == 'name')
+			name = param[1];
+		else if(param[0] == 'img')
+			img = param[1];
+	}
+	}
 	
 	function gogo()
 	{
