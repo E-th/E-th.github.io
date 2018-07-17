@@ -38,7 +38,7 @@ a.darken:hover img {
 
 <body>
  <div class="layer">
-	<a id="kakao-link-btn" href="javascript:;" class="darken">
+	<a id="kakao-link-btn" href="javascript:gogo()" class="darken">
 		<img src="button.png" />
 	</a>
 </div>
@@ -46,19 +46,26 @@ a.darken:hover img {
 <script type="text/javascript">
 	var img;
 	var name;
-	var url = unescape(location.href);
-	var pm  = url.split('?');
-	var params   = pm[1].split('&');
-	var param = params[i].split('=');
+	window.onload = function()
+	{
+		var url = unescape(location.href);
+		var pm  = url.split('?');
+		var params   = pm[1].split('&');
+		var param = params[i].split('=');
+		
+		name = param[1];
+		alert(name);
+		param = params[i].split('=');	
+		img  = param[1];
+		alert(img);
+	}
+	
+	
+	function gogo()
+	{
+		Kakao.init('9b64b9486c378ed2e211bce78ba3269f');
 
-	name = param[1];
-	alert(name);
-	param = params[i].split('=');	
-	img  = param[1];
-	alert(img);
-	Kakao.init('9b64b9486c378ed2e211bce78ba3269f');
-
-    Kakao.Link.createDefaultButton({
+		Kakao.Link.createDefaultButton({
       container: '#kakao-link-btn',
       objectType: 'feed',
       content: {
@@ -79,6 +86,7 @@ a.darken:hover img {
         }
       ]
     });
+	}
 </script>
 </body>
 
