@@ -48,7 +48,7 @@ a.darken:hover img {
 	var name;
 	window.onload = function()
 	{
-	var url = unescape(location.href);
+	var url = decodeURI(location.href);
 	var pm  = url.split('?');
 	
 	var params   = pm[1].split('&');
