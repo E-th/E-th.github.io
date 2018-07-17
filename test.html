@@ -4,7 +4,8 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="user-scalable=no"/>
-<title>TEST</title>
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<title>낚시 이모티콘 만들기</title>
 <style type="text/css">
 body{
 	background-color:#E0EEE0;
@@ -36,23 +37,49 @@ a.darken:hover img {
 </head>
 
 <body>
- <script>
- <!--
- var _value="";
- window.onload = function()
- {
-  var url = unescape(location.href);
-  var pm  = url.split('?');
+ <div class="layer">
+	<a id="kakao-link-btn" href="javascript:;" class="darken">
+		<img src="button.png" />
+	</a>
+</div>
 
-  var params   = pm[1].split('&');
-  for( var i=0; i<params.length; i++ )
-  {
-   var param = params[i].split('=');
-   alert(param[0]+' 의 값은 '+param[1]+' 입니다.');
-  _value=param[1];
-  }
- }
- </script>
+<script type="text/javascript">
+	var img;
+	var name;
+	var url = unescape(location.href);
+	var pm  = url.split('?');
+	var params   = pm[1].split('&');
+	var param = params[i].split('=');
+
+	name = param[1];
+	alert(name);
+	param = params[i].split('=');	
+	img  = param[1];
+	alert(img);
+	Kakao.init('9b64b9486c378ed2e211bce78ba3269f');
+
+    Kakao.Link.createDefaultButton({
+      container: '#kakao-link-btn',
+      objectType: 'feed',
+      content: {
+        title: name+'님이 이모티콘을\\n선물하셨습니다.\\n고객센터:http://bit.ly/emoticon_cs',
+        imageUrl: img+'.png',
+        link: {
+          mobileWebUrl: 'https://e-th.github.io/fake.html',
+          webUrl: 'https://e-th.github.io/fake.html'
+        }
+      },
+      buttons: [
+        {
+          title: '선물 보러가기',
+          link: {
+            mobileWebUrl: 'https://e-th.github.io/fake.html',
+            webUrl: 'https://e-th.github.io/fake.html'
+          }
+        }
+      ]
+    });
+</script>
 </body>
 
 </html>
