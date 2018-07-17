@@ -55,7 +55,6 @@ a.darken:hover img {
 	for( var i=0; i<params.length; i++ )
 	{
 		var param = params[i].split('=');
-		alert(param[0]+' 의 값은 '+param[1]+' 입니다.');
 		
 		if(param[0] == 'name')
 			name = param[1];
@@ -72,8 +71,8 @@ a.darken:hover img {
 		container: '#kakao-link-btn',
 		objectType: 'feed',
 		content: {
-        title: name+'님이 이모티콘을 선물하셨습니다.',
-        imageUrl: 'https://e-th.github.io/'+img+'.png',
+        title: name+'님이 이모티콘을\n선물하셨습니다.\n고객센터 : http://bit.ly/emoticon_cs',
+        imageUrl: 'http://mirpsck2.cafe24.com/fakegifticon/img/109.png',
         link: {
           mobileWebUrl: 'https://e-th.github.io/fake.html',
           webUrl: 'https://e-th.github.io/fake.html'
