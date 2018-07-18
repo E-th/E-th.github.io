@@ -46,23 +46,6 @@ a.darken:hover img {
 <script>
 	var img;
 	var name;
-	window.onload = function()
-	{
-	var url = decodeURI(location.href);
-	var pm  = url.split('?');
-	
-	var params   = pm[1].split('&');
-	for( var i=0; i<params.length; i++ )
-	{
-		var param = params[i].split('=');
-		
-		if(param[0] == 'name')
-			name = param[1];
-		else if(param[0] == 'img')
-			img = param[1];
-	}
-	}
-	
 	function gogo()
 	{
 		Kakao.init('9b64b9486c378ed2e211bce78ba3269f');
@@ -90,6 +73,22 @@ a.darken:hover img {
         }
       ]
     });
+	}
+	window.onload = function()
+	{
+	var url = decodeURI(location.href);
+	var pm  = url.split('?');
+	
+	var params   = pm[1].split('&');
+	for( var i=0; i<params.length; i++ )
+	{
+		var param = params[i].split('=');
+		
+		if(param[0] == 'name')
+			name = param[1];
+		else if(param[0] == 'img')
+			img = param[1];
+	}
 	}
 </script>
 </body>
