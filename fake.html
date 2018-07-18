@@ -18,12 +18,35 @@
 					
 	<script type="text/javascript">
         window.onload = function () {
- 
+ 		
             var myPhotos = new Array(
                 "https://i.ytimg.com/vi/ZxHoTi7NqaY/maxresdefault.jpg","fake_1.png","fake_2.png", "fake_3.png","fake_4.png");
             var index = Math.floor(Math.random() * myPhotos.length); 
  
             document.getElementById("idimage").src = myPhotos[index];
+		var url = decodeURI(location.href);
+		var pm  = url.split('?');
+		
+		var params   = pm[1].split('&');
+		for( var i=0; i<params.length; i++ )
+		{
+			var param = params[i].split('=');
+			
+			if(param[0] == 'son' && param[1] == 1)
+			{
+			   	alert('ㅎㅇ');
+				alert('친구가 너 손가락 운동좀하래');
+				alert("손운동해야지"); 		
+				for (i=50;i>=1;i--)
+					alert("손가락운동좀 하자"+i);    
+				for (i=50;i>=1;i--)            
+					alert(i+"번 더");    
+		
+				alert('수고했어~~');
+				alert('ㅅㄱㅇ');
+			}
+		}
+		
               
         };
     </script>
