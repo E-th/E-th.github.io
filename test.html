@@ -62,11 +62,12 @@ a.darken:hover img {
 				img = param[1];
 		}
 			var filename = 'http://e-th.github.io/'+img+'.png'; 
-			alert(filename);
 			var img = new Image();
 			img.src = filename;
-			var se = img.naturalWidth();
-			alert(se);
+			img.onload = function() 
+			{
+			alert(this.width + 'x' + this.height);
+			}
 	}
 	function gogo()
 	{
