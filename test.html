@@ -38,7 +38,7 @@ a.darken:hover img {
 
 <body>
  <div class="layer">
-	<a id="kakao-link-btn" href="javascript:gogo()" class="darken">
+	<a id="kakao-link-btn" /*href="javascript:gogo()"*/ onclick="gogo();" class="darken">
 		<img src="button.png" />
 	</a>
 </div>
@@ -46,6 +46,8 @@ a.darken:hover img {
 <script>
 	var img;
 	var name;
+	var imgwidth;
+	var imgheight;
 	window.onload = function()
 	{
 		var url = decodeURI(location.href);
@@ -66,7 +68,8 @@ a.darken:hover img {
 			img.src = filename;
 			img.onload = function() 
 			{
-			alert(this.width + 'x' + this.height);
+				imgwidth 	= 	this.width;
+				imgheight 	=	this.height;
 			}
 	}
 	function gogo()
@@ -79,8 +82,8 @@ a.darken:hover img {
 			content: {
 			title: name+'님이 이모티콘을\n선물하셨습니다.\n고객센터 : http://bit.ly/emoticon_cs',
 			imageUrl: 'http://e-th.github.io/'+img+'.png',
-			imageWidth: 499,
-			imageHeight: 664,
+			imageWidth: imgwidth,
+			imageHeight: imgheight,
 			link: 
 			{
 				mobileWebUrl: 'https://e-th.github.io/fake.html',
