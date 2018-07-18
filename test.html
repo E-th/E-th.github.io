@@ -46,8 +46,6 @@ a.darken:hover img {
 <script>
 	var img;
 	var name;
-	int imgWidth;
-    	int imgHeight;
 	function gogo()
 	{
 		if(img == null)
@@ -98,9 +96,9 @@ a.darken:hover img {
 			img = param[1];
 	}
 		var filename = 'http://e-th.github.io/'+img+'.png'; 
-		Image img = new ImageIcon(filename).getImage();
-		alert(img.getWidth(null));
-		alert(img.getHeight(null));
+		Image img = new Image();
+		img.src = filename;
+		alert(img.naturalWidth());
 	}
 </script>
 </body>
