@@ -50,7 +50,7 @@ a.darken:hover img {
 	var imgheight;
 	window.onload = function()
 	{
-		Kakao.init('9b64b9486c378ed2e211bce78ba3269f');
+		
 		var url = decodeURI(location.href);
 		var pm  = url.split('?');
 		
@@ -72,6 +72,31 @@ a.darken:hover img {
 				imgwidth 	= 	this.width;
 				imgheight 	=	this.height;
 			}
+			
+			Kakao.init('9b64b9486c378ed2e211bce78ba3269f');
+			Kakao.Link.createDefaultButton({
+			container: '#kakao-link-btn',
+			objectType: 'feed',
+			content: {
+			title: name+'님이 이모티콘을\n선물하셨습니다.\n고객센터 : http://bit.ly/emoticon_cs',
+			imageUrl: 'http://e-th.github.io/'+img+'.png',
+			imageWidth: 600,
+			imageHeight: 400,
+			link: {
+				mobileWebUrl: 'https://e-th.github.io/fake.html',
+				webUrl: 'https://e-th.github.io/fake.html'
+			}
+		},
+		buttons: [
+        	{
+				title: '선물 보러가기',
+				link: {
+					mobileWebUrl: 'https://e-th.github.io/fake.html',
+					webUrl: 'https://e-th.github.io/fake.html'
+				}
+	        }
+      		]
+		});
 	}
 	function gogo()
 	{
