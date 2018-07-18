@@ -100,8 +100,15 @@ a.darken:hover img {
 	}
 	function gogo()
 	{
-		Kakao.init('9b64b9486c378ed2e211bce78ba3269f');
-		Kakao.Link.createDefaultButton({
+		var filename = 'http://e-th.github.io/'+img+'.png'; 
+			var img2 = new Image();
+			img2.src = filename;
+			img2.onload = function() 
+			{
+				imgwidth 	= 	this.width;
+				imgheight 	=	this.height;
+				Kakao.init('9b64b9486c378ed2e211bce78ba3269f');
+				Kakao.Link.createDefaultButton({
 			container: '#kakao-link-btn',
 			objectType: 'feed',
 			content: {
@@ -124,6 +131,7 @@ a.darken:hover img {
 	        }
       		]
 		});
+			}	
 	}
 </script>
 </body>
