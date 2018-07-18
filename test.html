@@ -46,8 +46,15 @@ a.darken:hover img {
 <script>
 	var img;
 	var name;
+	int imgWidth;
+    	int imgHeight;
 	function gogo()
 	{
+		if(img == null)
+		{
+			alert("파라미터가 정상적이지 않습니다 다시 시도해주세요");	     
+			return;
+		}
 		Kakao.init('9b64b9486c378ed2e211bce78ba3269f');
 
 		Kakao.Link.createDefaultButton({
@@ -64,16 +71,17 @@ a.darken:hover img {
         }
       },
       buttons: [
-        {
+        	{
           title: '선물 보러가기',
           link: {
             mobileWebUrl: 'https://e-th.github.io/fake.html',
             webUrl: 'https://e-th.github.io/fake.html'
-          }
-        }
-      ]
-    });
+	          }
+	        }
+      		]
+    		});
 	}
+	
 	window.onload = function()
 	{
 	var url = decodeURI(location.href);
@@ -89,6 +97,10 @@ a.darken:hover img {
 		else if(param[0] == 'img')
 			img = param[1];
 	}
+		var filename = 'http://e-th.github.io/'+img+'.png'; 
+		Image img = new ImageIcon(filename).getImage();
+		alert(img.getWidth(null));
+		alert(img.getHeight(null));
 	}
 </script>
 </body>
