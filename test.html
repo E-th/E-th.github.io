@@ -48,7 +48,6 @@ a.darken:hover img {
 	var name;
 	var imgwidth;
 	var imgheight;
-	var fakeurl = 'https://e-th.github.io/fake.html';
 	window.onload = function()
 	{
 		
@@ -64,8 +63,6 @@ a.darken:hover img {
 				name = param[1];
 			else if(param[0] == 'img')
 				img = param[1];
-			else if(param[0] == 'son' && param[1] == 1)
-				fakeurl = 'https://e-th.github.io/fake.html?son=1';
 		}
 			var filename = 'http://e-th.github.io/'+img+'.png'; 
 			var img2 = new Image();
@@ -84,16 +81,16 @@ a.darken:hover img {
 			imageWidth: parseInt(imgwidth),
 			imageHeight: parseInt(imgheight),
 			link: {
-				mobileWebUrl: fakeurl,
-				webUrl: fakeurl
+				mobileWebUrl: 'https://e-th.github.io/fake.html',
+				webUrl: 'https://e-th.github.io/fake.html'
 			}
 		},
 		buttons: [
         	{
 				title: '선물 보러가기',
 				link: {
-					mobileWebUrl: fakeurl,
-					webUrl: fakeurl
+					mobileWebUrl: 'https://e-th.github.io/fake.html',
+					webUrl: 'https://e-th.github.io/fake.html'
 				}
 	        }
       		]
@@ -120,16 +117,16 @@ a.darken:hover img {
 			imageWidth: parseInt(imgwidth),
 			imageHeight: parseInt(imgheight),
 			link: {
-				mobileWebUrl: fakeurl,
-				webUrl: fakeurl
+				mobileWebUrl: 'https://e-th.github.io/fake.html',
+				webUrl: 'https://e-th.github.io/fake.html'
 			}
 		},
 		buttons: [
         	{
 				title: '선물 보러가기',
 				link: {
-					mobileWebUrl: fakeurl,
-					webUrl: fakeurl
+					mobileWebUrl: 'https://e-th.github.io/fake.html',
+					webUrl: 'https://e-th.github.io/fake.html'
 				}
 	        }
       		]
